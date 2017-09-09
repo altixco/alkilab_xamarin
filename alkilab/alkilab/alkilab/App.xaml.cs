@@ -12,7 +12,6 @@ namespace alkilab
         public App()
         {
             InitializeComponent();
-
             MainPage = new alkilab.MainPage();
         }
 

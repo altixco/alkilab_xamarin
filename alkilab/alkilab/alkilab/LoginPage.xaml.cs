@@ -3,20 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
 namespace alkilab
 {
-    public partial class MainPage : TabbedPage
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class LoginPage : ContentPage
     {
-        public MainPage()
+        public LoginPage()
         {
             InitializeComponent();
-            PushLoginPage();
-        }
-
-        async void PushLoginPage() {
-            await Navigation.PushModalAsync(new LoginPage());
         }
     }
 }
