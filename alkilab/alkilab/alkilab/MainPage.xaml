@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:alkilab"
+             x:Class="alkilab.MainPage"
+             BackgroundImage="background.jpg">
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Image x:Name="logo" Source="alkilab.png"
+                   VerticalOptions="CenterAndExpand" HorizontalOptions="Center"
+                   Margin="60"/>
+            <StackLayout Margin="20">
+                <Entry Placeholder="Usuario" PlaceholderColor="White"/>
+                <Entry Placeholder="Contraseña" PlaceholderColor="White"/>
+                <Button Text="Iniciar Sesión"  BackgroundColor="#282828" TextColor="White"/>
+                <Button Text="Regístrate ahora" BackgroundColor="#282828" TextColor="White"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
