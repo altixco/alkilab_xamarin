@@ -16,5 +16,14 @@ namespace alkilab
         {
             InitializeComponent();
         }
+
+        public void onRegisterClick(object sender, EventArgs e) {
+            PushRegisterPage();
+        }
+
+        async void PushRegisterPage()
+        {
+            await Navigation.PushModalAsync(new RegisterPage());
+        }
     }
 }

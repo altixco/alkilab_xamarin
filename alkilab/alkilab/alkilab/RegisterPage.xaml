@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:alkilab; assembly=alkilab"
+             x:Class="alkilab.RegisterPage"
+             BackgroundImage="background.jpg">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Llena los campos a continuación: " 
+                   TextColor="White"
+                   FontSize="Large"
+                   Margin="10"/>
+            <StackLayout Margin="20">
+                <StackLayout Orientation="Horizontal">
+                    <Entry x:Name="name" Placeholder="Nombres" PlaceholderColor="White" WidthRequest="300"
+                           HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                    <Image x:Name="name_check" Source="error.png"
+                           HorizontalOptions="End" VerticalOptions="Center"/>
+                </StackLayout>
+
+                <Entry x:Name="lastname" Placeholder="Apellidos" PlaceholderColor="White"/>
+                <Entry x:Name="email" Placeholder="Email" PlaceholderColor="White" TextColor="White">
+                    <Entry.Behaviors>
+                        <local:EmailValidatorBehavior x:Name="emailValidator"/>
+                    </Entry.Behaviors>  
+                </Entry>
+            </StackLayout>
+            <StackLayout Margin="20">
+                <Entry x:Name="username" Placeholder="Usuario" PlaceholderColor="White"/>
+                <Entry x:Name="password" 
+                       IsPassword="True" 
+                       Placeholder="Contraseña" 
+                       PlaceholderColor="White"/>
+                <Entry x:Name="password2" 
+                       IsPassword="True" 
+                       Placeholder="Repite la contraseña" 
+                       PlaceholderColor="White"/>
+                <Button Text="REGISTRARME"  BackgroundColor="#282828" TextColor="White"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
