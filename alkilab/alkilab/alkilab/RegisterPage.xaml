@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="alkilab.RegisterPage"
+             BackgroundImage="background.jpg">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Llena los campos a continuación: " 
+                   TextColor="White"
+                   FontSize="Large"
+                   HorizontalOptions="CenterAndExpand"
+                   Margin="10"/>
+            <StackLayout Margin="20">
+                <Entry x:Name="name" Placeholder="Nombres" PlaceholderColor="White"/>
+                <Entry x:Name="lastname" Placeholder="Apellidos" PlaceholderColor="White"/>
+                <Entry x:Name="email" Placeholder="Email" PlaceholderColor="White"/>
+            </StackLayout>
+            <StackLayout Margin="20">
+                <Entry x:Name="username" Placeholder="Usuario" PlaceholderColor="White"/>
+                <Entry x:Name="password" 
+                       IsPassword="True" 
+                       Placeholder="Contraseña" 
+                       PlaceholderColor="White"/>
+                <Entry x:Name="password2" 
+                       IsPassword="True" 
+                       Placeholder="Repite la contraseña" 
+                       PlaceholderColor="White"/>
+                <Button Text="REGISTRARME"  BackgroundColor="#282828" TextColor="White"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

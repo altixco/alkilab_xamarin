@@ -12,7 +12,7 @@
                 <Entry Placeholder="Usuario" PlaceholderColor="White"/>
                 <Entry Placeholder="Contraseña" PlaceholderColor="White"/>
                 <Button Text="Iniciar Sesión"  BackgroundColor="#282828" TextColor="White"/>
-                <Button Text="Regístrate ahora" BackgroundColor="#282828" TextColor="White"/>
+                <Button Text="Regístrate ahora" Clicked="onRegisterClick" BackgroundColor="#282828" TextColor="White"/>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>
