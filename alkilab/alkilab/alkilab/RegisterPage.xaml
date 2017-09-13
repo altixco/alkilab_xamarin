@@ -12,29 +12,46 @@
                    Margin="10"/>
             <StackLayout Margin="20">
                 <StackLayout Orientation="Horizontal">
-                    <Entry x:Name="name" Placeholder="Nombres" PlaceholderColor="White" WidthRequest="300"
-                           HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
-                    <Image x:Name="name_check" Source="error.png"
+                    <Entry x:Name="name" Placeholder="Nombres" PlaceholderColor="White" 
+                           HorizontalOptions="FillAndExpand" StyleId="name" />
+                    <Image x:Name="name_check" Source="error.png" IsVisible="False"
                            HorizontalOptions="End" VerticalOptions="Center"/>
                 </StackLayout>
-
-                <Entry x:Name="lastname" Placeholder="Apellidos" PlaceholderColor="White"/>
-                <Entry x:Name="email" Placeholder="Email" PlaceholderColor="White" TextColor="White">
-                    <Entry.Behaviors>
-                        <local:EmailValidatorBehavior x:Name="emailValidator"/>
-                    </Entry.Behaviors>  
-                </Entry>
+                <StackLayout Orientation="Horizontal">
+                    <Entry x:Name="lastname" Placeholder="Apellidos" PlaceholderColor="White"
+                           HorizontalOptions="FillAndExpand" StyleId="lastname"/>
+                    <Image x:Name="lastname_check" Source="error.png" IsVisible="False"
+                           HorizontalOptions="End" VerticalOptions="Center"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Entry x:Name="email" Placeholder="Email" PlaceholderColor="White" 
+                           TextColor="White"  HorizontalOptions="FillAndExpand" StyleId="email"
+                           TextChanged="HandleEmailChanged">
+                    </Entry>
+                    <Image x:Name="email_check" Source="error.png" IsVisible="False"
+                           HorizontalOptions="End" VerticalOptions="Center"/>
+                </StackLayout>
             </StackLayout>
             <StackLayout Margin="20">
-                <Entry x:Name="username" Placeholder="Usuario" PlaceholderColor="White"/>
-                <Entry x:Name="password" 
-                       IsPassword="True" 
-                       Placeholder="Contraseña" 
-                       PlaceholderColor="White"/>
-                <Entry x:Name="password2" 
-                       IsPassword="True" 
-                       Placeholder="Repite la contraseña" 
-                       PlaceholderColor="White"/>
+                <StackLayout Orientation="Horizontal">
+                    <Entry x:Name="username" Placeholder="Usuario" PlaceholderColor="White"
+                            HorizontalOptions="FillAndExpand" StyleId="username"/>
+                    <Image x:Name="username_check" Source="error.png" IsVisible="False"
+                           HorizontalOptions="End" VerticalOptions="Center"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Entry x:Name="password" IsPassword="True" HorizontalOptions="FillAndExpand"
+                       Placeholder="Contraseña" PlaceholderColor="White" StyleId="password" />
+                    <Image x:Name="password_check" Source="error.png" IsVisible="False"
+                           HorizontalOptions="End" VerticalOptions="Center"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Entry x:Name="password2" IsPassword="True" StyleId="password2"
+                       Placeholder="Repite la contraseña" PlaceholderColor="White" HorizontalOptions="FillAndExpand"/>
+                    <Image x:Name="password2_check" Source="error.png" IsVisible="False"
+                           HorizontalOptions="End" VerticalOptions="Center"/>
+                </StackLayout>
+                
                 <Button Text="REGISTRARME"  BackgroundColor="#282828" TextColor="White"/>
             </StackLayout>
         </StackLayout>
