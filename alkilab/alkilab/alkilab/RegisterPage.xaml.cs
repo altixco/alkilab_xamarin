@@ -1,39 +1,61 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
+using System.Collections.Generic;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+
+using alkilab.validators;
 
 namespace alkilab
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class RegisterPage : ContentPage
 	{
-
-        const string emailRegex = @"^(?("")("".+?(?<!\\)""@)|(([0-9a-z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*)(?<=[0-9a-z])@))" + @"(?(\[)(\[(\d{1,3}\.){3}\d{1,3}\])|(([0-9a-z][-\w]*[0-9a-z]*\.)+[a-z0-9][\-a-z0-9]{0,22}[a-z0-9]))$";
+        private BasicValidator _validator;
+        private Dictionary<string, bool> _errors;
 
         public RegisterPage ()
 		{
 			InitializeComponent ();
+            _validator = new BasicValidator();
+
 		}
+
+        public void HandleUserNameChanged(object sender, TextChangedEventArgs e) {
+            CheckEntryImage(sender, () => {
+                return _validator.ValidateAlphaNumeric(e.NewTextValue);
+            });
+        }
+
+        public void HandleTextChanged(object sender, TextChangedEventArgs e) {
+            CheckEntryImage(sender, () => {
+                return _validator.ValidateText(e.NewTextValue);
+            });
+        }
 
         public void HandleEmailChanged(object sender, TextChangedEventArgs e)
         {
+            CheckEntryImage(sender, () => {
+                return _validator.ValidateEmail(e.NewTextValue);
+            });
+        }
+
+        public void CheckEntryImage(object sender, Func<bool> method) {
             var item = (Entry)sender;
             var check = (Image)this.FindByName<Image>(item.StyleId + "_check");
             check.IsVisible = true;
 
-            var isValid = (Regex.IsMatch(e.NewTextValue, emailRegex, RegexOptions.IgnoreCase, TimeSpan.FromMilliseconds(250)));
-
-            if (isValid)
+            if (method())
                 check.Source = "ok.png";
             else
                 check.Source = "error.png";
+        }
 
+        public void HandlerRegisterClick(object sender, EventArgs e)
+        {
+            //Regex.Replace(XML, @"\s+", "")
+            
         }
     }
 }
