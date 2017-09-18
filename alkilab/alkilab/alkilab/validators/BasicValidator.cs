@@ -26,14 +26,14 @@ namespace alkilab.validators
 
         /// <summary>
         /// Validates these rules for the password:
-        /// 1. the password should contain 8 to 15 characters
+        /// 1. the password should contain 8 to 20 characters
         /// 2. the password must have at least 1 letter, 1 number 
         /// and 1 Uppercase letter
         /// </summary>
         /// <param name="stringToValidate"></param>
         /// <returns></returns>
         public bool ValidatePassword(string stringToValidate) {
-            return Regex.IsMatch(stringToValidate, @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,15}$");
+            return Regex.IsMatch(stringToValidate, @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,20}$");
         }
     }
 }
