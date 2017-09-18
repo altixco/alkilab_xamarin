@@ -19,16 +19,21 @@
                    TextColor="White"
                    FontSize="Large"
                    Margin="10"/>
+            <StackLayout x:Name="messages_box" Orientation="Horizontal" BackgroundColor="Red"
+                         IsVisible="False">
+                <Label x:Name="messages" TextColor="White" Margin="20" />
+            </StackLayout>
             <StackLayout Margin="20">
                 <StackLayout Orientation="Horizontal">
                     <Entry x:Name="name" Placeholder="Nombres" StyleId="name" 
-                           TextChanged="HandleTextChanged"/>
+                           TextChanged="HandleTextChanged" />
                     <Image x:Name="name_check" Source="error.png" IsVisible="False"
                            HorizontalOptions="End" VerticalOptions="Center"/>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
                     <Entry x:Name="lastname" Placeholder="Apellidos" StyleId="lastname"
-                           TextChanged="HandleTextChanged"/>
+                           TextChanged="HandleTextChanged"
+                           />
                     <Image x:Name="lastname_check" Source="error.png" IsVisible="False"
                            HorizontalOptions="End" VerticalOptions="Center"/>
                 </StackLayout>
@@ -49,17 +54,17 @@
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
                     <Entry x:Name="password" IsPassword="True" StyleId="password"
-                       Placeholder="Contraseña"/>
+                       Placeholder="Contraseña" TextChanged="HandlePasswordChanged"/>
                     <Image x:Name="password_check" Source="error.png" IsVisible="False"
                            HorizontalOptions="End" VerticalOptions="Center"/>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
                     <Entry x:Name="password2" IsPassword="True" StyleId="password2"
-                       Placeholder="Repite la contraseña"/>
+                       Placeholder="Repite la contraseña" TextChanged="HandlePassword2Changed"/>
                     <Image x:Name="password2_check" Source="error.png" IsVisible="False"
                            HorizontalOptions="End" VerticalOptions="Center"/>
                 </StackLayout>
-                
+
                 <Button Text="REGISTRARME"  BackgroundColor="#282828" TextColor="White"
                         Clicked="HandlerRegisterClick"/>
             </StackLayout>
